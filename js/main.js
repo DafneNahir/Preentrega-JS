@@ -3,33 +3,6 @@
 let productos = ["leche", "pan", "huevos"];
 let stock = [8, 5, 12];
 
-function menu() {
-  let opcion;
-  do {
-    opcion = parseInt(prompt("Menú principal: \n 1 = Ver stock \n 2 = Usar producto \n 3 = Reponer producto \n 4 = Salir"));
-
-    switch (opcion) {
-      case 1:
-        alert("Stock actual:\n" + "Leche: " + stock[0] + "\nPan: " + stock[1] + "\nHuevos: " + stock[2]);
-        break;
-      case 2:
-        usarProducto();
-        break;
-      case 3:
-        reponerProducto();
-        break;
-      case 4:
-        alert("¡Gracias!");
-        break;
-      default:
-        alert("Elija una opción correcta.");
-    }
-
-  } while (opcion !== 4);
-}
-
-menu();
-
 const verStock = () => {
   return alert("Leche: " + stock[0] + "\n Pan: " + stock[1] + "\n Huevos: " + stock[2]);
 }
@@ -63,5 +36,32 @@ function reponerProducto() {
     alert("Agregaste " + cantidad + " unidades de " + productos[opcion - 1] + " al stock.");
   }
 }
+
+function menu() {
+  let opcion;
+  do {
+    opcion = parseInt(prompt("Menú principal: \n 1 = Ver stock \n 2 = Usar producto \n 3 = Reponer producto \n 4 = Salir"));
+
+    switch (opcion) {
+      case 1:
+        alert("Stock actual:\n" + "Leche: " + stock[0] + "\nPan: " + stock[1] + "\nHuevos: " + stock[2]);
+        break;
+      case 2:
+        usarProducto();
+        break;
+      case 3:
+        reponerProducto();
+        break;
+      case 4:
+        alert("¡Gracias!");
+        break;
+      default:
+        alert("Elija una opción correcta.");
+    }
+
+  } while (opcion !== 4);
+}
+
+menu();
 
 alert("Tu stock final es:\n" + "Leche: " + stock[0] + "\nPan: " + stock[1] + "\nHuevos: " + stock[2]);    
